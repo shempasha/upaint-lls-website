@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UPaint LLC | Painting, Flooring & Handyman Services</title>
+<meta name="description" content="UPaint LLC provides painting, flooring, designer walls, remodeling and handyman services in Philadelphia and nearby areas. Free estimates.">
+<style>
+:root{
+  --black:#080706;--dark:#12100f;--brown:#7d5943;--brown2:#a98063;
+  --white:#f4f0eb;--muted:#b8b0aa;--line:rgba(255,255,255,.11)
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#080706;color:var(--white);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}
+a{color:inherit;text-decoration:none}.container{width:min(1160px,92%);margin:auto}
+header{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(8,7,6,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+nav{height:74px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:23px}
+.brand img{width:43px;height:43px;border-radius:11px;object-fit:cover}
+.links{display:flex;gap:24px;align-items:center}.links a:hover{color:#c7a184}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:999px;font-weight:800;border:1px solid var(--line)}
+.btn-primary{background:linear-gradient(135deg,var(--brown2),var(--brown));color:#fff;border:0}
+.btn-dark{background:rgba(255,255,255,.06)}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:110px}
+.hero:before{content:"";position:absolute;inset:0;background:
+linear-gradient(90deg,#080706 0%,rgba(8,7,6,.92) 34%,rgba(8,7,6,.52) 64%,rgba(8,7,6,.72) 100%),
+url('assets/designer-wall-2.jpeg') center right/cover no-repeat;filter:saturate(.75)}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:42px;align-items:center}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:900;color:#c7a184}
+h1{font-size:clamp(46px,7.5vw,88px);line-height:.92;letter-spacing:-.07em;margin:0 0 24px;max-width:850px}
+h2{font-size:clamp(34px,5vw,58px);line-height:1;letter-spacing:-.055em;margin:0 0 18px}
+.lead{font-size:19px;line-height:1.65;color:#d4cec8;max-width:680px}
+.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.hero-card{min-height:410px;border:1px solid var(--line);border-radius:30px;padding:28px;display:flex;align-items:flex-end;background:
+linear-gradient(180deg,rgba(8,7,6,.08),rgba(8,7,6,.9)),
+url('assets/project-flooring.jpeg') center/cover no-repeat;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.hero-card-inner{max-width:320px}.hero-card h3{font-size:29px;margin:0 0 10px}.hero-card p{color:#ddd4cc;line-height:1.5}
+section{padding:88px 0}.section-head{max-width:760px;margin-bottom:34px}
+.services{background:linear-gradient(180deg,#080706,#100d0b)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.card{padding:28px;border-radius:24px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(125,89,67,.04));min-height:190px}
+.card h3{font-size:23px;margin:0 0 12px}.card p{color:var(--muted);line-height:1.6;margin:0}
+.work{background:#100e0c}.gallery{display:grid;grid-template-columns:1.35fr .95fr .95fr 1.15fr;gap:15px}
+.gallery figure{margin:0;min-height:360px;border-radius:24px;overflow:hidden;position:relative;border:1px solid var(--line)}
+.gallery img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.78) brightness(.85);transition:.5s}
+.gallery figure:hover img{transform:scale(1.035);filter:saturate(.9) brightness(.92)}
+.gallery figure:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(5,4,4,.88))}
+.gallery figcaption{position:absolute;z-index:2;left:18px;bottom:16px;font-weight:850;font-size:18px}
+.about-grid,.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+.logo-panel{border-radius:28px;overflow:hidden;border:1px solid var(--line);background:#111}
+.logo-panel img{display:block;width:100%;height:100%;object-fit:cover}
+.points{display:grid;gap:14px}.point{padding:18px 0;border-bottom:1px solid var(--line)}.point strong{font-size:20px}.point p{margin:7px 0 0;color:var(--muted);line-height:1.55}
+.contact{background:radial-gradient(circle at 80% 20%,rgba(125,89,67,.14),transparent 28%),#0c0a09}
+.contact-card{padding:30px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,rgba(125,89,67,.11),rgba(255,255,255,.025))}
+.contact-card a{display:block;margin:10px 0;font-size:19px}
+footer{padding:30px 0;border-top:1px solid var(--line);color:var(--muted)}
+.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.contact form{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  width:100%;
+  margin-top:24px;
+}
+
+.contact form label{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  font-size:14px;
+  font-weight:700;
+  color:#d8d0c9;
+}
+
+.contact form label:last-of-type{
+  grid-column:1 / -1;
+}
+
+.contact form input,
+.contact form select,
+.contact form textarea{
+  width:100%;
+  padding:14px 16px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.05);
+  color:#f4f0eb;
+  font:inherit;
+  outline:none;
+}
+
+.contact form input::placeholder,
+.contact form textarea::placeholder{
+  color:#8f8882;
+}
+
+.contact form input:focus,
+.contact form select:focus,
+.contact form textarea:focus{
+  border-color:#a98063;
+  background:rgba(255,255,255,.08);
+}
+
+.contact form select{
+  color:#f4f0eb;
+}
+
+.contact form select option{
+  color:#111;
+}
+
+.contact form textarea{
+  min-height:140px;
+  resize:vertical;
+}
+
+.contact form button{
+  grid-column:1 / -1;
+  justify-self:start;
+  margin-top:4px;
+}
+
+@media(max-width:700px){
+  .contact form{
+    grid-template-columns:1fr;
+  }
+
+  .contact form label:last-of-type,
+  .contact form button{
+    grid-column:auto;
+  }
+}
+@media(max-width:850px){.links{display:none}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.gallery figure{min-height:300px}.hero-card{min-height:330px}}
+</style>
+</head>
+<body>
+<header><div class="container"><nav>
+<a class="brand" href="#"><img src="assets/logo.jpeg" alt="UPaint logo"><span>YouPaint LLC</span></a>
+<div class="links"><a href="#services">Services</a><a href="#work">Work</a><a href="#about">Why Us</a><a href="#contact" class="btn btn-dark">Free Estimate</a></div>
+</nav></div></header>
+
+<main>
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<p class="eyebrow">Philadelphia • Painting • Flooring • Handyman</p>
+<h1>Modern work for homes that deserve better.</h1>
+<p class="lead">UPaint LLC delivers painting, flooring, designer walls, remodeling and reliable handyman services with a clean modern finish.</p>
+<div class="actions">
+<a class="btn btn-primary" href="tel:+16098328000">Call David: (609) 832-8000</a>
+<a class="btn btn-dark" href="https://www.instagram.com/youpaint_llc/" target="_blank">Instagram @youpaint_llc</a>
+</div>
+</div>
+<div class="hero-card"><div class="hero-card-inner">
+<p class="eyebrow">Recent project</p><h3>Painting + flooring in just 3 days.</h3>
+<p>Fast turnaround. Clean execution. One team for multiple parts of the project.</p>
+</div></div>
+</div>
+</section>
+
+<section class="services" id="services"><div class="container">
+<div class="section-head"><p class="eyebrow">Services</p><h2>From a fresh coat of paint to full room upgrades.</h2></div>
+<div class="grid">
+<div class="card"><h3>Interior & Exterior Painting</h3><p>Walls, ceilings, trim, doors, rentals, touch-ups and full repainting projects.</p></div>
+<div class="card"><h3>Flooring Installation</h3><p>Vinyl plank, laminate, transitions, baseboards, prep and finishing details.</p></div>
+<div class="card"><h3>Designer Walls</h3><p>Modern wall panels, decorative surfaces, limewash textures and statement walls.</p></div>
+<div class="card"><h3>Handyman Services</h3><p>Repairs, installations, drywall patches, doors, shelves, fixtures and punch-list work.</p></div>
+<div class="card"><h3>Demolition & Prep</h3><p>Careful removal, project prep, cleanup and getting rooms ready for the next phase.</p></div>
+<div class="card"><h3>Home Remodeling</h3><p>Room refreshes, rental turnovers and coordinated home-improvement projects.</p></div>
+</div>
+</div></section>
+
+<section class="work" id="work"><div class="container">
+<div class="section-head"><p class="eyebrow">Our work</p><h2>Real projects. Real results.</h2></div>
+<div class="gallery">
+<figure><img src="assets/project-flooring.jpeg" alt="Painting and flooring project"><figcaption>Painting + Flooring</figcaption></figure>
+<figure><img src="assets/before-after.jpeg" alt="Before and after flooring project"><figcaption>Before & After</figcaption></figure>
+<figure><img src="assets/designer-wall-1.jpeg" alt="Designer wall installation"><figcaption>Designer Wall</figcaption></figure>
+<figure><img src="assets/designer-wall-2.jpeg" alt="Modern interior feature wall"><figcaption>Modern Interior Finish</figcaption></figure>
+</div>
+</div></section>
+
+<section id="about"><div class="container about-grid">
+<div class="logo-panel"><img src="assets/logo.jpeg" alt="UPaint brand"></div>
+<div>
+<p class="eyebrow">Why UPaint</p><h2>Dark, modern style. Clean, practical work.</h2>
+<div class="points">
+<div class="point"><strong>Quality first</strong><p>Careful prep, attention to detail and a clean finish.</p></div>
+<div class="point"><strong>One team, multiple services</strong><p>Painting, flooring, handyman work and remodeling under one roof.</p></div>
+<div class="point"><strong>Easy estimates</strong><p>Call or text with photos of the project to get started quickly.</p></div>
+</div>
+</div>
+</div></section>
+
+<section class="contact" id="contact"><div class="container contact-grid">
+<div><p class="eyebrow">Free estimate</p><h2>Tell us what you need done.</h2><p class="lead">Send photos, your location and a short description of the project.</p></div>
+<div class="contact-card">
+<a href="tel:+16098328000"><strong>Phone:</strong> (609) 832-8000</a>
+<a href="sms:+16098328000"><strong>Text David</strong></a>
+<a href="https://www.instagram.com/youpaint_llc/" target="_blank"><strong>Instagram:</strong> @youpaint_llc</a>
+</div>
+<form
+  name="estimate-request"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+>
+  <input type="hidden" name="form-name" value="estimate-request">
+
+  <p style="display:none;">
+    <label>
+      Don't fill this out:
+      <input name="bot-field">
+    </label>
+  </p>
+
+  <label>
+    Full Name
+    <input
+      type="text"
+      name="name"
+      placeholder="John Smith"
+      required
+    >
+  </label>
+
+  <label>
+    Phone Number
+    <input
+      type="tel"
+      name="phone"
+      placeholder="(555) 123-4567"
+      required
+    >
+  </label>
+
+  <label>
+    Email
+    <input
+      type="email"
+      name="email"
+      placeholder="john@email.com"
+      required
+    >
+  </label>
+
+  <label>
+    Service Needed
+    <select name="service" required>
+      <option value="">Select a service</option>
+      <option>Interior Painting</option>
+      <option>Exterior Painting</option>
+      <option>Flooring Installation</option>
+      <option>Designer Walls / Limewash</option>
+      <option>Drywall Repair</option>
+      <option>Handyman Services</option>
+      <option>Demolition & Prep</option>
+      <option>Home Remodeling</option>
+      <option>Other</option>
+    </select>
+  </label>
+
+  <label>
+    Preferred Date
+    <input type="date" name="preferred_date">
+  </label>
+
+  <label>
+    City / ZIP
+    <input
+      type="text"
+      name="location"
+      placeholder="Philadelphia, PA 191xx"
+    >
+  </label>
+
+  <label>
+    Tell Us About Your Project
+    <textarea
+      name="message"
+      rows="6"
+      placeholder="Describe your project..."
+      required
+    ></textarea>
+  </label>
+
+  <button class="btn btn-primary" type="submit">
+    Request Free Estimate
+  </button>
+</form>
+</div></section>
+</main>
+
+<footer><div class="container footer-row"><span>© 2026 UPaint LLC</span><span>Painting • Flooring • Handyman • Remodeling</span></div></footer>
+</body>
+</html>
